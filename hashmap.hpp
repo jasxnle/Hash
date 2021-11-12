@@ -155,14 +155,6 @@ private:
 
     // You will no doubt need to add at least a few more private members
 
-    int computeHash(std::string const & key);
-
-    //Size Variable
-    unsigned int arrSize;
-    
-    //array of nodes
-    Node * hashNode = new Node[arrSize];
-
 
 
 };
