@@ -155,6 +155,17 @@ private:
 
     // You will no doubt need to add at least a few more private members
 
+    //Hash Function
+    //unsigned int computeHash(std::string const & key);
+    unsigned int getIndex(const std::string& key);
+    void initializeBucket(Node **bucket, unsigned int bucketSize);
+    //Size Variable
+    unsigned int numOfKeys = 0;
+    unsigned int bucketSize = INITIAL_BUCKET_COUNT;
+    double calcLoadFactor = 0;
+
+    //Pointer Node 
+    Node** bucket; 
 
 
 };
