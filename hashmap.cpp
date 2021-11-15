@@ -1,5 +1,6 @@
 #include "HashMap.hpp"
 #include <string>
+#include <iostream>
 
 //Initializing Buckets first wit nullptr
 void HashMap::initializeBucket(Node ** bucket, unsigned int bucketSize)
@@ -139,9 +140,13 @@ void HashMap::add(const std::string& key, const std::string& value)
             {
                 bucket[getIndex(key)]->key = key;
                 bucket[getIndex(key)]->value = value;
+                
             }
             //For Size() Function
             numOfKeys++;
+         
+            // std::cout << bucket[getIndex(key)]->key  <<std::endl;
+            //     std::cout <<bucket[getIndex(key)]->value <<std::endl;
         }
     }
     else
@@ -204,11 +209,13 @@ bool HashMap::contains(const std::string& key) const
         {
             if(curr->key == key) // if we have the value
             {
+                std::cout << curr->key;
                 return true;
             }
             curr = curr->next;
         }
     }
+    
     return false;
 }
 
